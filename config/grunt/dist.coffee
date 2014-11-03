@@ -5,7 +5,7 @@ module.exports = (grunt) ->
         browserifyOptions:
           extensions: ['.js', '.coffee']
           standalone: 'Quill'
-        transform: ['coffeeify', 'stylify']
+        transform: ['coffeeify']
       files:
         'dist/quill.js': ['src/index.coffee']
   )

@@ -1,6 +1,5 @@
 _ = require('lodash')
 dom = require('../../lib/dom')
-baseStyles = require('./base.styl')
 
 
 class BaseTheme
@@ -16,8 +15,7 @@ class BaseTheme
 
   constructor: (@quill, @options) ->
     dom(@quill.root.parentNode).addClass('ql-container')
-    if @options.styles
-      this.addStyles(baseStyles + BaseTheme.objToCss(@options.styles))
+    this.addStyles(@options.styles) if @options.styles
 
   addStyles: (css) ->
     css = BaseTheme.objToCss(css) if _.isObject(css)
